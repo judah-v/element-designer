@@ -1,0 +1,83 @@
+body {
+    background: lightblue;
+    text-align: center;
+    height: 100%;
+    font-family: arial;
+    
+}
+.container {
+    border: 2px dotted;
+    margin: auto;
+    padding: 10px;
+    border-radius: 3px;
+    min-height: 10vh;
+    min-width: 20vw;
+    width: fit-content;
+    height: fit-content;
+    align-content: center;
+}
+.container input {
+    margin-bottom: 10px;
+}
+.control-section {
+    display: inline-block;
+    border: 3px solid;
+    margin: auto 40px;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 3px;
+}
+.control-section * {
+    margin: 5px 0;
+    text-align: right;
+}
+.container target {
+    height: 30%;
+}
+.control-section #font-weight {
+    width: 177px;
+}
+.control-section #text-decoration {
+    width: 102px;
+}
+#editor-div {
+    float: left;
+    width: 49%;
+    min-width: 300px;
+    height: 99%;
+    border-right: 1px solid;
+    align-content: center;
+
+}
+
+#result-div {
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    min-width: 300px;
+    width: 49%;
+    height: 99vh;
+    align-content: center;
+    
+}
+h2 {
+    position: absolute;
+    top: 0px;
+}
+form label{
+    display: block;
+}
+input[type="range"] {
+    width: 177px;
+}
+#copy-result {
+    visibility: hidden;
+    font-family: arial;
+    font-weight: bold;
+}
+button {
+    height: 30px;
+    width: 150px;
+    font-size: 15px;
+}

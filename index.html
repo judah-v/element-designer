@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Designer</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div id="editor-div">
+        <h2>Controls</h2>
+        <br><br>
+        <p><b>Text (&ltp&gt)</b></p>
+        <div class="control-section">
+            <form action="" class="p-tag">
+                <label for="p-value">Text:
+                    <input name="p-value" id="p-value" type="text" placeholder="Sample Text">
+                </label>
+                <label for="background-color">Background color:
+                    <input name="background-color" id="background-color" type="text" placeholder="Background color">
+                </label>
+                <label for="font-family">Font:
+                    <input type="text" width=20 id="font-family" placeholder="Font name"></label>
+                <label for="color">Font color:
+                    <input name="color" id="color" type="text" placeholder="Text color">
+                </label>
+                <label for="font-size">Font Size: 
+                    <input id="font-size" type="range" min="10" max="100" value="25">
+                </label>
+                <label for="font-weight">Font Weight:
+                    <select name="font-weight" id="font-weight">
+                        <option value="normal">Normal</option>
+                        <option value="bold">Bold</option>
+                    </select>
+                </label>
+                <label for="text-decoration">Text decoration:
+                    <select name="text-decoration" id="text-decoration">
+                        <option value="none" selected>None</option>
+                        <option value="underline">Underline</option>
+                        <option value="overline">Overline</option>
+                        <option value="line-through">Strikethrough</option>
+                    </select>
+                    <select name="text-decoration-style" id="text-decoration-style">
+                        <option value="solid" selected>Solid</option>
+                        <option value="wavy">Wavy</option>
+                        <option value="dashed">Dashed</option>
+                        <option value="dotted">Dotted</option>
+                    </select>
+                    <input type="text" width=20 id="text-decoration-color" placeholder="Line color">
+                </label>
+            </form>
+        </div>
+
+        <p><b>Textbox (&ltinput&gt)</b></p>
+
+        <div class="control-section">
+            <form action="" class="input-tag">
+                <label for="border-radius">Border radius: 
+                    <input id="border-radius" type="range" min="0" max="20" value="0">
+                </label>
+                <label for="height">Height:
+                    <input id="height" type="range" min="10" max="100" value="25">
+                </label>
+                <label for="width">Width
+                    <input id="width" type="range" min="100" max="400" value="177">
+                </label>
+                <label for="font-size">Font Size: 
+                    <input id="font-size" type="range" min="10" max="100" value="25"></label>
+                <label for="background-color">Background color
+                    <input id="background-color" type="text" placeholder="Background color">
+                </label>
+                <label for="opacity">Opacity
+                    <input id="opacity" type="range" min="10" max="100" value="100">
+                </label>
+                <label for="color">Text color
+                    <input id="color" type="text" placeholder="Text color">
+                </label>
+                
+            </form>
+        </div>
+    </div>
+    <div id="result-div">
+        <h2>Result</h2>
+        <div class="container">
+            <p class="target" id="p-tag">Sample Text</p>
+            <input class="target" id="input-tag" placeholder="Sample Input Box">
+        </div>
+        <br>
+        <button onclick="location.reload()">Clear</button>
+        <div>
+            <h3>Copy Styles:</h3>
+            <button onclick="copyToClipboard(PTarget.stylesToString())">Text</button>
+            <button onclick="copyToClipboard(InputTarget.stylesToString())">Textbox</button>
+            <p id="copy-result">Lorem Ipsum</p>
+        </div>
+    </div>
+</body>
+</html>
