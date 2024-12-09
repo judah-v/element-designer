@@ -2,6 +2,30 @@
 for (const form of document.forms){
     form.addEventListener('change', modifyTargetStyle);
 }
+checkOrientation();
+screen.orientation.onchange = checkOrientation;
+
+function checkOrientation() {
+    if (screen.orientation.type.includes('portrait')) {
+        let cover = document.createElement('div');
+        cover.innerHTML = "<h1>Please rotate your device.</h1><p>This site does not currently support portrait mode</p>"
+        cover.style.height = '100vh'
+        cover.style.width = '100vw'
+        cover.style.position = 'fixed'
+        cover.style.background = 'white'
+        cover.style.zIndex = '9'
+        cover.id = 'cover'
+        document.body.insertBefore(cover, document.body.firstChild)
+    } else {
+        removeCover()
+    }
+    function removeCover(){
+        let cover = document.getElementById('cover');
+        if (cover){
+            document.body.removeChild(cover);
+        }
+    }
+}
 
 class Target {
     constructor(name, properties, element){
